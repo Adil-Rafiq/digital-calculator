@@ -427,6 +427,7 @@ select {
 
 body {
     padding: .5em;
+    padding-block: 1.3em;
 }
 
 @media screen and (min-width: 35rem) {
