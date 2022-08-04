@@ -1,0 +1,451 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700&display=swap');
+
+/* ------------------- */
+/* Custom properties   */
+/* ------------------- */
+
+:root {
+    /* colors */
+
+    --clr-dark-font: 221 14% 31%;
+    --clr-white-font: 0 0% 100%; 
+
+    --clr-dark-font: 60 10% 19%;
+
+    --clr-yellow-font: 52 100% 62%;
+    --clr-darkblue-font: 198 20% 13%;
+
+
+    /* font-sizes */
+    --fs-900: 9.375rem;
+    --fs-800: 6.25rem;
+    --fs-700: 3.5rem;
+    --fs-600: 2rem;
+    --fs-500: 1.5rem;
+    --fs-400: 1.125rem;
+    --fs-300: 1rem;
+    --fs-200: 0.875rem;
+    
+    /* font-families */
+    --ff-league-spartan: 'League Spartan', sans-serif;
+
+    /* borders */
+    --border-radius-1: 13px;
+    --border-radius-2: 5px;
+
+    /* animations */
+    --animation-properties: 200ms linear infinite forwards;
+}
+
+
+/* ------------------- */
+/* Reset               */
+/* ------------------- */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+    margin: 0; 
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-weight: 400;
+}
+
+/* set up the body */
+body {
+    font-family: var(--ff-league-spartan);
+    font-size: var(--fs-600);
+    font-weight: 700;
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+/* make images easier to work with */
+img,
+picutre {
+    max-width: 100%;
+    display: block;
+}
+
+/* make form elements easier to work with */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* ------------------- */
+/* Utility classes     */
+/* ------------------- */
+
+/* general */
+
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+.flex-space-btw {
+    justify-content: space-between;
+}
+
+.grid {
+    display: grid;
+    gap: var(--gap, 1rem);
+}
+
+.flow > *:where(:not(:first-child)) {
+    margin-top: var(--flow-space, 1rem);
+}
+
+.container {
+    padding-inline: .8em;
+    margin-inline: auto;
+    max-width: 30rem;
+}
+
+.sr-only {
+  position: absolute; 
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px; 
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+
+/* colors */
+.clr-theme-01 {
+    /* theme 01 */
+    --clr-main-bg: 222 26% 31%;
+    --clr-screen-bg: 224 36% 15%;
+    --clr-keypad-bg: 223 31% 20%;
+    
+    --clr-keyrest-bg: 225 21% 49%;
+    --clr-keyrest-shadow: 224 28% 35%;
+    --clr-keyequal-bg: 6 63% 50%;
+    --clr-keyequal-shadow: 6 70% 34%;
+    --clr-keygen-bg: 30 25% 89%;
+    --clr-keygen-shadow: 28 16% 65%;
+    --clr-tab-bg: var(--clr-keypad-bg);
+
+    --clr-keyreset-bg-hover: 224 51% 76%;
+    --clr-keyequal-bg-hover: 6 93% 67%;
+    --clr-keygen-bg-hover: 0 0% 100%;
+    
+    --clr-display-font: 0 0% 100%;
+    --clr-numkeys-font: 221 14% 31%;
+    --clr-keyrest-font: 0 0% 100%;
+    --clr-keyequal-font: 0 0% 100%;
+    --clr-infomenu-font: var(--clr-display-font);
+}
+.clr-theme-02 {
+    /* theme 02 */
+    --clr-main-bg: 0 0% 90%;
+    --clr-screen-bg: 0 0% 93%;
+    --clr-keypad-bg: 0 5% 81%;
+    
+    --clr-keyrest-bg: 185 42% 37%;
+    --clr-keyrest-shadow: 185 58% 25%;
+    --clr-keyequal-bg: 25 98% 40%;
+    --clr-keyequal-shadow: 25 99% 27%;
+    --clr-keygen-bg: 45 7% 89%;
+    --clr-keygen-shadow: 35 11% 61%;
+    --clr-tab-bg: var(--clr-keypad-bg);
+
+    --clr-keyreset-bg-hover: 186 40% 57%;
+    --clr-keyequal-bg-hover: 25 100% 61%;
+    --clr-keygen-bg-hover: 0 0% 100%;
+    
+    --clr-display-font: 60 10% 19%;
+    --clr-numkeys-font: 60 10% 19%;
+    --clr-keyrest-font: 0 0% 100%;
+    --clr-keyequal-font: 0 0% 100%;
+    --clr-infomenu-font: var(--clr-display-font);
+}
+.clr-theme-03{ 
+    /* theme 03 */
+    --clr-main-bg: 268 75% 9%;
+    --clr-screen-bg: 268 71% 12%;
+    --clr-keypad-bg: 268 71% 12%;
+    
+    --clr-keyrest-bg: 281 89% 26%;
+    --clr-keyrest-shadow: 285 91% 52%;
+    --clr-keyequal-bg: 176 100% 44%;
+    --clr-keyequal-shadow: 177 92% 70%;
+    --clr-keygen-bg: 268 47% 21%;
+    --clr-keygen-shadow: 290 70% 36%;
+    --clr-tab-bg: var(--clr-keypad-bg);
+    
+    --clr-keyreset-bg-hover: 280 56% 44%;
+    --clr-keyequal-bg-hover: 177 100% 79%;
+    --clr-keygen-bg-hover: 268 54% 44%;
+
+    --clr-display-font: 52 100% 62%;
+    --clr-numkeys-font: 52 100% 62%;
+    --clr-keyrest-font: 0 0% 100%;
+    --clr-keyequal-font: 198 20% 13%;
+    --clr-infomenu-font: var(--clr-display-font);
+}
+
+
+
+.bg-main { background-color: hsl(var(--clr-main-bg));}
+.bg-screen { background-color: hsl(var(--clr-screen-bg));}
+.bg-keypad { background-color: hsl(var(--clr-keypad-bg));}
+.bg-tab { background-color: hsl(var(--clr-tab-bg));}
+
+.bg-keygen { background-color: hsl(var(--clr-keygen-bg));}
+.bg-keyrest { background-color: hsl(var(--clr-keyrest-bg));}
+.bg-keyequal { background-color: hsl(var(--clr-keyequal-bg));}
+
+.bg-keygen:hover { background-color: hsl(var(--clr-keygen-bg-hover));}
+.bg-keyrest:hover { background-color: hsl(var(--clr-keyreset-bg-hover));}
+.bg-keyequal:hover { background-color: hsl(var(--clr-keyequal-bg-hover));}
+
+.shadow-keygen { box-shadow: 0 2px 5px hsl(var(--clr-keygen-shadow));}
+.shadow-keyrest { box-shadow: 0 2px 5px hsl(var(--clr-keyrest-shadow));}
+.shadow-keyequal { box-shadow: 0 2px 5px hsl(var(--clr-keyequal-shadow));}
+
+.text-display { color: hsl(var(--clr-display-font));}
+.text-numkeys { color: hsl(var(--clr-numkeys-font));}
+.text-keyrest { color: hsl(var(--clr-keyrest-font));}
+.text-keyequal { color: hsl(var(--clr-keyequal-font));}
+.text-infomenu { color: hsl(var(--clr-infomenu-font));}
+
+.text-dark { color: hsl( var(--clr-dark) );}
+.text-white { color: hsl( var(--clr-white) );}
+
+/* typography */
+
+.ff-league { font-family: var(--ff-league-spartan);}
+
+.letter-spacing-1 { letter-spacing: 4px; } 
+.letter-spacing-2 { letter-spacing: 2.7px; } 
+.letter-spacing-3 { letter-spacing: 2.35px; } 
+
+.uppercase { text-transform: uppercase; }
+
+.fs-900 { font-size: var(--fs-900); }
+.fs-800 { font-size: var(--fs-800); }
+.fs-700 { font-size: var(--fs-700); }
+.fs-600 { font-size: var(--fs-600); }
+.fs-500 { font-size: var(--fs-500); }
+.fs-400 { font-size: var(--fs-400); }
+.fs-300 { font-size: var(--fs-300); }
+.fs-200 { font-size: var(--fs-200); }
+
+.fs-900,
+.fs-800,
+.fs-700,
+.fs-600 {
+    line-height: 1.1;
+}
+
+/* -------------------------------------------------------------- */
+
+.logo {
+    transform: translateY(16px);
+    letter-spacing: -.8px;
+}
+.theme-tab {
+    font-weight: 600;
+    align-items: center;
+}
+.theme-tab > span {
+    letter-spacing: -.3px;
+    align-self:flex-end;
+    font-size: .6rem;
+}
+
+.tab-numbers {
+    text-align: center;
+    padding-left: 8px;
+    padding-left: 3.1px;
+}
+
+.tab {
+    padding: .36em .25em;
+    display: flex;
+    justify-content: space-between;
+    gap: .6rem;
+    width: 100%;
+    border-radius: 20px;
+}
+.tab > button {
+    cursor: pointer;
+    padding: .4em;
+    aspect-ratio: 1;
+    border: 0;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* ------------------------------------------------------- */
+
+.display {
+    padding: clamp(.5em, 2vw, 1em);
+    text-align: right;
+    border-radius: var(--border-radius-1);
+}
+
+/* ------------------------------------------------------- */
+
+.keypad {
+    --flow-space: 1.2rem;
+    padding: clamp(1rem, 4vw, 1.5rem);
+    grid-template-columns: repeat(4, 1fr);
+    border-radius: var(--border-radius-1);
+}
+
+@keyframes animateBoxShadowKeyGen {
+    0% {
+        box-shadow: 0 2px 5px hsl(var(--clr-keygen-shadow));
+    }
+
+    25% {
+        box-shadow: 0 1px 3px hsl(var(--clr-keygen-shadow));
+    }
+
+    50% {
+        box-shadow: none;
+    }
+
+    75% {
+        box-shadow: 0 1px 3px hsl(var(--clr-keygen-shadow));
+    }
+
+    100% {
+        box-shadow: 0 2px 5px hsl(var(--clr-keygen-shadow));
+    }
+}
+
+
+@keyframes animateBoxShadowKeyReset {
+    0% {
+        box-shadow: 0 2px 5px hsl(var(--clr-keyrest-shadow));
+    }
+
+    25% {
+        box-shadow: 0 1px 3px hsl(var(--clr-keyrest-shadow));
+    }
+
+    50% {
+        box-shadow: none;
+    }
+
+    75% {
+        box-shadow: 0 1px 3px hsl(var(--clr-keyrest-shadow));
+    }
+
+    100% {
+        box-shadow: 0 2px 5px hsl(var(--clr-keyrest-shadow));
+    }
+}
+
+@keyframes animateBoxShadowKeyEqual {
+    0% {
+        box-shadow: 0 2px 5px hsl(var(--clr-keyequal-shadow));
+    }
+
+    25% {
+        box-shadow: 0 1px 3px hsl(var(--clr-keyequal-shadow));
+    }
+
+    50% {
+        box-shadow: none;
+    }
+
+    75% {
+        box-shadow: 0 1px 3px hsl(var(--clr-keyequal-shadow));
+    }
+
+    100% {
+        box-shadow: 0 2px 5px hsl(var(--clr-keyequal-shadow));
+    }
+}
+
+.keypad > button {
+    cursor: pointer;
+    border: 0;
+    border-radius: var(--border-radius-2);
+}
+
+.l-key {
+    padding-block: .7em;
+}
+
+.l-key[role = "reset"] {
+    grid-column: 1/3;
+}
+.l-key[role = "equal"] {
+    grid-column: 3/5;
+}
+
+/* ------------------------------------------------------- */
+
+body {
+    padding: .5em;
+}
+
+@media screen and (min-width: 35rem) {
+    body {
+        padding: 3em;
+    }
+}
+
+/* ------------------------------------------------------- */
+
+/* Attribution */
+.attribution {
+    font-size: .8rem;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+.attribution a {
+    color: hsl(var(--clr-infomenu-font));
+}
+
+
+/* ------------------------------------------------------- */

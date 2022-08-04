@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <script src="app.js" defer></script>
+    <title>Frontend Mentor | Calculator app</title>
+  </head>
+
+  <body class="clr-theme-01 bg-main">
+    <div class="container flow" style="--flow-space: 1.8rem">
+      <header class="header text-infomenu flex flex-space-btw">
+        <div class="logo fs-500">calc</div>
+        <div class="theme-tab fs-200 uppercase flex">
+          <span>Theme</span>
+          <div class="tab-div">
+            <div class="tab-numbers letter-spacing-1">
+              <span>1</span>
+              <span>2</span>
+              <span>3</span>
+            </div>
+            <div class="tab bg-tab" role="tab-list">
+              <button
+                class="theme01 bg-keyequal"
+                role="tab"
+                tabindex="0"
+                value="1"
+              >
+                <span class="sr-only">Theme tab 1</span>
+              </button>
+              <button
+                class="theme02 bg-keyequal"
+                role="tab"
+                tabindex="-1"
+                value="2"
+                style="opacity: 0"
+              >
+                <span class="sr-only">Theme tab 2</span>
+              </button>
+              <button
+                class="theme03 bg-keyequal"
+                role="tab"
+                tabindex="-1"
+                value="3"
+                style="opacity: 0"
+              >
+                <span class="sr-only">Theme tab 3</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="display bg-screen text-display">0</div>
+      <div class="keypad bg-keypad grid">
+        <button class="s-key bg-keygen shadow-keygen text-numkeys" value="7">
+          7
+        </button>
+        <button class="s-key bg-keygen shadow-keygen text-numkeys" value="8">
+          8
+        </button>
+        <button class="s-key bg-keygen shadow-keygen text-numkeys" value="9">
+          9
+        </button>
+        <button
+          class="s-key bg-keyrest shadow-keyrest text-keyrest fs-200"
+          role="delete"
+        >
+          DEL
+        </button>
+        <button class="s-key bg-keygen shadow-keygen text-numkeys" value="4">
+          4
+        </button>
+        <button class="s-key bg-keygen shadow-keygen text-numkeys" value="5">
+          5
+        </button>
+        <button class="s-key bg-keygen shadow-keygen text-numkeys" value="6">
+          6
+        </button>
+        <button class="s-key bg-keygen shadow-keygen text-numkeys" value="+">
+          +
+        </button>
+        <button class="s-key bg-keygen shadow-keygen text-numkeys" value="1">
+          1
+        </button>
+        <button class="s-key bg-keygen shadow-keygen text-numkeys" value="2">
+          2
+        </button>
+        <button class="s-key bg-keygen shadow-keygen text-numkeys" value="3">
+          3
+        </button>
+        <button class="s-key bg-keygen shadow-keygen text-numkeys" value="-">
+          -
+        </button>
+        <button class="s-key bg-keygen shadow-keygen text-numkeys" value=".">
+          .
+        </button>
+        <button class="s-key bg-keygen shadow-keygen text-numkeys" value="0">
+          0
+        </button>
+        <button class="s-key bg-keygen shadow-keygen text-numkeys" value="/">
+          /
+        </button>
+        <button class="s-key bg-keygen shadow-keygen text-numkeys" value="*">
+          x
+        </button>
+        <button
+          class="l-key bg-keyrest shadow-keyrest text-keyrest fs-200"
+          role="reset"
+        >
+          RESET
+        </button>
+        <button
+          class="l-key bg-keyequal shadow-keyequal text-keyequal fs-300"
+          role="equal"
+        >
+          =
+        </button>
+      </div>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://github.com/Adil-Rafiq">Muhammad Adil</a>.
+    </div>
+  </body>
+</html>
